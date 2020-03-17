@@ -29,7 +29,9 @@
                 <span class="post-card-byline-date"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
                 <span>
                     {{#if primary_tag}}
-                        {{primary_tag}}
+                    <a href="{{@site.url}}/tag/{{primary_tag.name}}/">
+                        {{primary_tag.name}}
+                    </a>
                     {{/if}}
                 </span> 
             </div>
