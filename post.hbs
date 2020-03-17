@@ -17,11 +17,19 @@ into the {body} of the default.hbs template --}}
 
             <header class="post-full-header">
 
-                {{#if primary_tag}}
+                {{!-- {{#if primary_tag}}
                 <section class="post-full-tags">
                     {{#primary_tag}}
                     <a href="{{url}}">{{name}}</a>
                     {{/primary_tag}}
+                </section>
+                {{/if}} --}} {{!-- I  removed the primary tage from heading--}}
+
+                {{#if tags}}
+                <section class="post-full-tags">
+                        {{#foreach tags}}
+                        <a href="{{url}}">{{name}} "|"</a>
+                        {{/foreach}}
                 </section>
                 {{/if}}
 
