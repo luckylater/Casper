@@ -17,16 +17,16 @@ into the {body} of the default.hbs template --}}
         <div class="post-feed">
 
 
-            <div>
-                {{#get "posts" filter="featured:true" limit="1" include="authors"}}
-                    {{#posts}}
-                    {{> "front-page-feature-card"}}
-                    {{/posts}}
-                {{/get}}
-            </div>
+            {{#get "posts" limit="all" filter="featured:true"}}
+                {{#foreach posts}}
+                    <a href="{{slug}}">{{title}}</a>
+                {{/foreach}}
+                {{> "post-card"}}
+            {{/get}}
+            
 
             {{#foreach posts}}
-
+                {{#unless filter="featured:true"}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
 

@@ -116,6 +116,7 @@ into the {body} of the default.hbs template --}}
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
+
             {{#if primary_tag}}
             {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
                 {{#if related_posts}}
@@ -131,17 +132,46 @@ into the {body} of the default.hbs template --}}
                             <li>
                                 <h4><a href="{{url}}">{{title}}</a></h4>
                                 <div class="read-next-card-meta">
-                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time> –
-                                        {{reading_time}}</p>
+                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                                    {{#if tag[1]}}
+                                        - {{tag[1]}}
+                                    {{/if}}
+                                    </p>
                                 </div>
                             </li>
                             {{/foreach}}
                         </ul>
                     </div>
-                    <footer class="read-next-card-footer">
-                        <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}}
-                            →</a>
-                    </footer>
+                </article>
+                {{/if}}
+            {{/get}}
+            {{/if}}
+
+            {{#if primary_author}}
+            {{#get "posts" filter="authors:{{primary_author.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
+                {{#if related_posts}}
+                <article class="read-next-card">
+                    <header class="read-next-card-header">
+                        {{#../primary_author}}
+                        <h3><span>More by</span> <a href="{{url}}">{{name}}</a></h3>
+                        {{/../primary_author}}
+                    </header>
+                    <div class="read-next-card-content">
+                        <ul>
+                            {{#foreach related_posts}}
+                            <li>
+                                <h4><a href="{{url}}">{{title}}</a></h4>
+                                <div class="read-next-card-meta">
+                                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                                    {{#if tag[1]}}
+                                        - {{tag[1]}}
+                                    {{/if}}
+                                    </p>
+                                </div>
+                            </li>
+                            {{/foreach}}
+                        </ul>
+                    </div>
                 </article>
                 {{/if}}
             {{/get}}
@@ -161,6 +191,12 @@ into the {body} of the default.hbs template --}}
 </aside>
 
 {{/post}}
+
+
+
+
+
+
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
