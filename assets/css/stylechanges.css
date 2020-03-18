@@ -15,3 +15,9 @@
     color: #738a94;
     font-style: italic;
 }
+
+.read-more-wrapper {
+    display: flex;
+    flex-direction: row;
+    columns: 1fr 2fr;
+}

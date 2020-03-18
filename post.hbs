@@ -40,7 +40,7 @@ into the {body} of the default.hbs template --}}
                         </section>
                     </section>
                 </div>
-                
+
             </header>
 
             <section class="post-full-content">
@@ -54,10 +54,14 @@ into the {body} of the default.hbs template --}}
     </div>
 </main>
 
+{{!--this is the CHECK OUT MORE CONTENT section--}}
+
+<aside class="read-more-wrapper">
+
 {{#if primary_author}}
 {{#get "posts" filter="authors:{{primary_author.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
 {{#if related_posts}}
-<aside class="read-next outer">
+<section class="read-next-card">
     <header class="read-next-card-header">
         {{#../primary_author}}
         <h3><span>More by</span> <a href="{{url}}">{{name}}</a></h3>
@@ -80,7 +84,7 @@ into the {body} of the default.hbs template --}}
             {{/foreach}}
         </ul>
     </div>
-</aside>
+</section>
 {{/if}}
 {{/get}}
 {{/if}}
@@ -88,7 +92,7 @@ into the {body} of the default.hbs template --}}
 {{#if primary_tag}}
 {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
 {{#if related_posts}}
-<aside class="read-next outer">
+<section class="read-next-card">
     <div class="inner">
         <div class="read-next-feed">
             <article class="read-next-card">
@@ -122,10 +126,14 @@ into the {body} of the default.hbs template --}}
             </article>
         </div>
     </div>
-</aside>
+</section>
 {{/if}}
 {{/get}}
 {{/if}}
+
+</aside>
+
+
 
 {{/post}}
 
