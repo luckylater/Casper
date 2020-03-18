@@ -2,7 +2,9 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{> site-header}}
+<header class="site-header">
+    {{> site-header}}
+</header>
 
 <header class="site-home-header">
     {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
@@ -19,7 +21,9 @@ into the {body} of the default.hbs template --}}
         <div class="post-feed">
 
             {{#get "posts" limit="1" filter="featured:true"}}
+            {{#foreach}}
                 {{> "post-card"}}
+            {{/foreach}}
             {{/get}}
 
             {{#foreach posts}}

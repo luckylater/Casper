@@ -1,5 +1,12 @@
 <div class="outer site-nav-main">
+
+    {{#if @site.logo}}
+        <a class="blog-logo" href="{{@site.url}}"><img src="{{@site.logo}}" alt="Blog Logo"/></a>
+    {{/if}}
+
     <div class="inner">
         {{> "site-nav"}}
     </div>
+
+    <h3>SAMPLE TITLE</h3>
 </div>
