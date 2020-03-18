@@ -15,18 +15,13 @@
     color: #738a94;
     font-style: italic;
 }
-
+    
 .read-more-wrapper {
     display: flex;
     flex-direction: row;
     columns: 1fr 2fr;
 }
-
-
-
-
-
-
+    
 header.site-header-base {
     margin: 0 auto;
     background-color: black;
@@ -35,4 +30,26 @@ header.site-header-base {
     display: flex;
     flex-direction: row;
     padding: 0 25px;
+}
+    
+    
+.site-nav-left {
+    padding: 10px 0;
+    overflow-x: hidden;
+}
+    
+.site-nav-logo img {
+    display: block;
+    width: auto;
+    height: 35px;
+}
+
+
+.post-card-byline-content {
+    flex: 0;
+    margin: 0;
+}
+
+.post-card-byline-tag {
+    text-transform: none;
 }
