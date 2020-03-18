@@ -21,3 +21,14 @@
     flex-direction: row;
     columns: 1fr 2fr;
 }
+
+
+
+
+
+
+header.site-header-base {
+    margin: 0 auto;
+    max-width: 1040px;
+    width: 100%;
+}
