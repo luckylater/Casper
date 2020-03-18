@@ -21,12 +21,8 @@
                         <h2 class="author-bio">{{bio}}</h2>
                     {{/if}}
                     <div class="author-meta">                        
-                        {{!-- {{#if location}}
-                            <div class="author-location">{{location}}</div>
-                        {{/if}} 
-                        MAYBE???--}}
                         {{#if website}}
-                            <span class="author-social-link"><a href="{{website}}" target="_blank" rel="noopener">Website</a></span>
+                            <span class="author-social-link"><a href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
                         {{/if}}
                         {{#if twitter}}
                             <span class="author-social-link"><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
