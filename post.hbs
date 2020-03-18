@@ -17,14 +17,6 @@ into the {body} of the default.hbs template --}}
 
             <header class="post-full-header">
 
-                {{!-- {{#if primary_tag}}
-                <section class="post-full-tags">
-                    {{#primary_tag}}
-                    <a href="{{url}}">{{name}}</a>
-                    {{/primary_tag}}
-                </section>
-                {{/if}} --}} {{!-- I  removed the primary tage from heading--}}
-
                 {{#if tags}}
                 <section class="post-full-tags">
                     {{tags separator="  |  "}}
@@ -38,47 +30,7 @@ into the {body} of the default.hbs template --}}
                 {{/if}}
 
                 <div class="post-full-byline">
-
                     <section class="post-full-byline-content">
-
-                        <ul class="author-list">
-                            {{#foreach authors}}
-                            <li class="author-list-item">
-
-                                <div class="author-card">
-                                    {{#if profile_image}}
-                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}"
-                                        alt="{{name}}" />
-                                    {{else}}
-                                    <div class="author-profile-image">{{> "icons/avatar"}}</div>
-                                    {{/if}}
-                                    <div class="author-info">
-                                        {{#if bio}}
-                                        <div class="bio">
-                                            <h2>{{name}}</h2>
-                                            <p>{{bio}}</p>
-                                            <p><a href="{{url}}">More posts</a> by {{name}}.</p>
-                                        </div>
-                                        {{else}}
-                                        <h2>{{name}}</h2>
-                                        <p>Read <a href="{{url}}">more posts</a> by this author.</p>
-                                        {{/if}}
-                                    </div>
-                                </div>
-
-                                {{#if profile_image}}
-                                <a href="{{url}}" class="author-avatar">
-                                    <img class="author-profile-image" src="{{img_url profile_image size="xs"}}"
-                                        alt="{{name}}" />
-                                </a>
-                                {{else}}
-                                <a href="{{url}}" class="author-avatar author-profile-image">{{> "icons/avatar"}}</a>
-                                {{/if}}
-
-                            </li>
-                            {{/foreach}}
-                        </ul>
-
                         <section class="post-full-byline-meta">
                             <h4 class="author-name">{{authors}}</h4>
                             <div class="byline-meta-content">
@@ -86,11 +38,9 @@ into the {body} of the default.hbs template --}}
                                     datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
                             </div>
                         </section>
-
                     </section>
-
-
                 </div>
+                
             </header>
 
             <section class="post-full-content">
@@ -98,17 +48,6 @@ into the {body} of the default.hbs template --}}
                     {{content}}
                 </div>
             </section>
-
-            {{!-- Email subscribe form at the bottom of the page --}}
-            {{!-- {{#if @labs.members}}
-                {{> subscribe-form}}
-            {{/if}} --}}
-
-            {{!--
-            <section class="post-full-comments">
-                If you want to embed comments, this is a good place to do it!
-            </section>
-            --}}
 
         </article>
 
@@ -118,7 +57,7 @@ into the {body} of the default.hbs template --}}
 {{#if primary_author}}
 {{#get "posts" filter="authors:{{primary_author.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
 {{#if related_posts}}
-<article class="read-next-card">
+<aside class="read-next outer">
     <header class="read-next-card-header">
         {{#../primary_author}}
         <h3><span>More by</span> <a href="{{url}}">{{name}}</a></h3>
@@ -133,7 +72,7 @@ into the {body} of the default.hbs template --}}
                     <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
                         {{!--watch out here--}}
                         {{#if secondary_tag}}
-                            - {{secondary_tag}}
+                        - {{secondary_tag}}
                         {{/if}}
                     </p>
                 </div>
@@ -141,19 +80,17 @@ into the {body} of the default.hbs template --}}
             {{/foreach}}
         </ul>
     </div>
-</article>
+</aside>
 {{/if}}
 {{/get}}
 {{/if}}
 
-
+{{#if primary_tag}}
+{{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
+{{#if related_posts}}
 <aside class="read-next outer">
     <div class="inner">
         <div class="read-next-feed">
-
-            {{#if primary_tag}}
-            {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
-            {{#if related_posts}}
             <article class="read-next-card">
                 <header class="read-next-card-header">
                     {{#../primary_tag}}
@@ -165,9 +102,12 @@ into the {body} of the default.hbs template --}}
                         {{#foreach related_posts}}
                         <li>
                             <h4><a href="{{url}}">{{title}}</a></h4>
+
+                            {{!--not working currently--}}
                             {{#primary_author}}
-                                <a href="{{url}}">{{name}}</a>
+                            <h5><a href="{{url}}">{{name}}</a></h5>
                             {{/primary_author}}
+
                             <div class="read-next-card-meta">
                                 <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
                                     {{!-- {{#if tag[1]}}
@@ -180,13 +120,12 @@ into the {body} of the default.hbs template --}}
                     </ul>
                 </div>
             </article>
-            {{/if}}
-            {{/get}}
-            {{/if}}
-
         </div>
     </div>
 </aside>
+{{/if}}
+{{/get}}
+{{/if}}
 
 {{/post}}
 
