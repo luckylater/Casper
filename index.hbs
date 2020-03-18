@@ -2,6 +2,8 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
+{{> site-header}}
+
 <header class="site-home-header">
     {{> header-background background=@site.cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
         <div class="inner">
@@ -16,27 +18,21 @@ into the {body} of the default.hbs template --}}
 
         <div class="post-feed">
 
-
-            {{#get "posts" limit="all" filter="featured:true"}}
-                {{#foreach posts}}
-                    <a href="{{slug}}">{{title}}</a>
-                {{/foreach}}
+            {{#get "posts" limit="1" filter="featured:true"}}
                 {{> "post-card"}}
             {{/get}}
-            
 
             {{#foreach posts}}
-                {{!-- {{#unless filter="featured:true"}}
-                {{/unless}} --}}
+                {{#unless filter="featured:true"}}
                 {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
+                {{/unless}}
             {{/foreach}}
         </div>
 
     </div>
 </main>
 
-{{> site-header}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}

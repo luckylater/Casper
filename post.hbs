@@ -93,38 +93,32 @@ into the {body} of the default.hbs template --}}
 {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
 {{#if related_posts}}
 <section class="read-next-card">
-    <div class="inner">
-        <div class="read-next-feed">
-            <article class="read-next-card">
-                <header class="read-next-card-header">
-                    {{#../primary_tag}}
-                    <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
-                    {{/../primary_tag}}
-                </header>
-                <div class="read-next-card-content">
-                    <ul>
-                        {{#foreach related_posts}}
-                        <li>
-                            <h4><a href="{{url}}">{{title}}</a></h4>
-
-                            {{!--not working currently--}}
-                            {{#primary_author}}
-                            <h5><a href="{{url}}">{{name}}</a></h5>
-                            {{/primary_author}}
-
-                            <div class="read-next-card-meta">
-                                <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                                    {{!-- {{#if tag[1]}}
-                                        - {{tag[1]}}
-                                    {{/if}} --}}
-                                </p>
-                            </div>
-                        </li>
-                        {{/foreach}}
-                    </ul>
+    <header class="read-next-card-header">
+        {{#../primary_tag}}
+        <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
+        {{/../primary_tag}}
+    </header>
+    <div class="read-next-card-content">
+        <ul>
+            {{#foreach related_posts}}
+            <li>
+                <h4><a href="{{url}}">{{title}}</a></h4>
+    
+                {{!--not working currently--}}
+                {{#primary_author}}
+                <h5><a href="{{url}}">{{name}}</a></h5>
+                {{/primary_author}}
+    
+                <div class="read-next-card-meta">
+                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                        {{!-- {{#if tag[1]}}
+                                            - {{tag[1]}}
+                                        {{/if}} --}}
+                    </p>
                 </div>
-            </article>
-        </div>
+            </li>
+            {{/foreach}}
+        </ul>
     </div>
 </section>
 {{/if}}
