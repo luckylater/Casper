@@ -54,6 +54,8 @@ header.site-header-base {
     text-transform: none;
 }
 
-.hp-lead-posts {
+.hp-lead-posts, .hp-oncampus-posts {
     display: flex;
+    flex-flow: column wrap;
 }
+

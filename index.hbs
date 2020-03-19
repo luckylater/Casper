@@ -16,16 +16,19 @@ into the {body} of the default.hbs template --}}
         <div class="post-feed latest-posts">
             {{#get "posts" limit="6" filter="featured:false"}}
             {{#foreach posts}}                
-                {{> "post-card"}}
+                {{> "latest-post-card"}}
             {{/foreach}}
             {{/get}}
         </div>
     </div>
 
     <div class="hp-oncampus-posts">
+        <h2>On-Campus Movies!</h2>
+        {{#get "posts" filter="tags:Entertainment" limit="3"}}
         {{#foreach posts}}
-            {{> "latest-post-card"}}
+            {{> "post-card"}}
         {{/foreach}}
+        {{/get}}
     </div>
 </main>
 
