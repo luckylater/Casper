@@ -7,7 +7,7 @@ into the {body} of the default.hbs template --}}
     <div class="hp-lead-posts">
         <div class="post-featured">
             {{#get "posts" limit="1" filter="featured:true"}}
-            {{#foreach}}
+            {{#foreach posts}}
                 {{> "post-card"}}
             {{/foreach}}
             {{/get}}

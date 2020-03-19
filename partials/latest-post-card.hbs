@@ -16,8 +16,8 @@
                 </span>
                 
                 <span>
-                    {{#if author="count:>2"}} <h5>Multiple authors</h5>
-                    {{else}}{{authors}}{{/if}}
+                    {{#has author="count:>2"}} <h5>Multiple authors</h5>
+                    {{else}}{{authors}}{{/has}}
                 </span>
                 
                 <span class="post-card-byline-date"><time
