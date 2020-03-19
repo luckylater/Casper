@@ -5,7 +5,6 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
     <div class="hp-lead-posts">
-
         <div class="post-featured">
             {{#get "posts" limit="1" filter="featured:true"}}
             {{#foreach}}
@@ -17,11 +16,16 @@ into the {body} of the default.hbs template --}}
         <div class="post-feed latest-posts">
             {{#get "posts" limit="6" filter="featured:false"}}
             {{#foreach posts}}                
-                {{> "latest-post-card"}}
+                {{> "post-card"}}
             {{/foreach}}
             {{/get}}
         </div>
+    </div>
 
+    <div class="hp-oncampus-posts">
+        {{#foreach posts}}
+            {{> "latest-post-card"}}
+        {{/foreach}}
     </div>
 </main>
 
