@@ -4,22 +4,22 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
-    <div class="inner posts">
+    <div class="hp-lead-posts">
 
-        <div class="post-feed">
-
+        <div class="post-featured">
             {{#get "posts" limit="1" filter="featured:true"}}
             {{#foreach}}
                 {{> "post-card"}}
             {{/foreach}}
             {{/get}}
+        </div>
 
-            {{#foreach posts}}
-                {{!-- {{#unless featured:true}} --}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-                {{> "post-card"}}
-                {{!-- {{/unless}} --}}
+        <div class="post-feed latest-posts">
+            {{#get "posts" limit="6" filter="featured:false"}}
+            {{#foreach posts}}                
+                {{> "latest-post-card"}}
             {{/foreach}}
+            {{/get}}
         </div>
 
     </div>

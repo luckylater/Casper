@@ -53,3 +53,7 @@ header.site-header-base {
 .post-card-byline-tag {
     text-transform: none;
 }
+
+.hp-lead-posts {
+    display: flex;
+}
