@@ -26,7 +26,7 @@ into the {body} of the default.hbs template --}}
         {{!-- <h2>On-Campus Movies!</h2> --}}
         <div class="this-tag">
             {{#post}}
-                {{#get "posts" filter="tag:entertainment+featured:false" limit="3"}}
+                {{#get "posts" limit="3" filter="tag:Entertainment"}}
                     {{#foreach posts}}
                     {{> "post-card"}}
                     {{/foreach}}
