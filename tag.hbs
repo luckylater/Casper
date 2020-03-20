@@ -3,7 +3,6 @@
 
 {{#tag}}
 <header class="site-archive-header">
-    {{!--Special header-image.hbs partial to generate the background image--}}
     <div class="inner site-header-content">
         <h1 class="site-title">{{name}}</h1>
         <h2 class="site-description">
@@ -12,23 +11,21 @@
             {{/if}}
         </h2>
     </div>
-    <div class="featured-tag-post">
+    {{!-- <div class="featured-tag-post">
         {{#get "posts" limit="1" filter="featured:true+tag:{{name}}"}}
         {{#foreach posts}}
-            {{> "post-card"}}
+        {{> "post-card"}}
         {{/foreach}}
         {{/get}}
-    </div>
+    </div> --}}
 </header>
 {{/tag}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
     <div class="inner posts">
-        <div class="post-feed">
-            {{#foreach posts}}
-            {{> "tag-post-card"}}
-            {{/foreach}}
-        </div>
+        {{#foreach posts}}
+        {{> "tag-post-card"}}
+        {{/foreach}}
     </div>
 </main>

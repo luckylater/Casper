@@ -54,10 +54,10 @@ into the {body} of the default.hbs template --}}
 
 <aside class="read-more-wrapper">
 
-{{#if primary_author}}
+
 {{#get "posts" filter="authors:{{primary_author.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
 {{#if related_posts}}
-<section class="read-next-card">
+<section class="read-next-card zero-out">
     <header class="read-next-card-header">
         {{#../primary_author}}
         <h3><span>More by</span> <a href="{{url}}">{{name}}</a></h3>
@@ -69,12 +69,7 @@ into the {body} of the default.hbs template --}}
             <li>
                 <h4><a href="{{url}}">{{title}}</a></h4>
                 <div class="read-next-card-meta">
-                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                        {{!--watch out here--}}
-                        {{#if secondary_tag}}
-                        - {{secondary_tag}}
-                        {{/if}}
-                    </p>
+                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></p>
                 </div>
             </li>
             {{/foreach}}
@@ -83,7 +78,6 @@ into the {body} of the default.hbs template --}}
 </section>
 {{/if}}
 {{/get}}
-{{/if}}
 
 {{#if primary_tag}}
 {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
@@ -99,18 +93,11 @@ into the {body} of the default.hbs template --}}
             {{#foreach related_posts}}
             <li>
                 <h4><a href="{{url}}">{{title}}</a></h4>
-    
-                {{!--not working currently--}}
-                {{#primary_author}}
-                <h5><a href="{{url}}">{{name}}</a></h5>
-                {{/primary_author}}
-    
+                
+                <span>{{authors}}</span>
+                  
                 <div class="read-next-card-meta">
-                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                        {{!-- {{#if tag[1]}}
-                                            - {{tag[1]}}
-                                        {{/if}} --}}
-                    </p>
+                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></p>
                 </div>
             </li>
             {{/foreach}}
@@ -122,8 +109,6 @@ into the {body} of the default.hbs template --}}
 {{/if}}
 
 </aside>
-
-
 
 {{/post}}
 
