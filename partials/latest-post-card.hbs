@@ -1,11 +1,5 @@
 <a class="latest-post-card" href="{{url}}">
-
-            <header class="post-card-header">
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
-
-            <div class="post-card-byline-content">
-                <span class="post-card-byline-tag">
+            <div class="post-card-byline-tag">
                     {{#if primary_tag}}
                     <p>~ 
                         <a href="{{@site.url}}/tag/{{primary_tag.name}}/">
@@ -13,17 +7,19 @@
                         </a>
                     </p>
                     {{/if}}
-                </span>
-                
+            </div>
+
+            <header class="post-card-header">
+                <h2 class="post-card-title">{{title}}</h2>
+            </header>
+
+            <div class="post-card-byline-content">
                 <span>
-                    {{#has author="count:>2"}} <h5>Multiple authors</h5>
-                    {{else}}{{authors}}{{/has}}
-                </span>
-                
-                <span class="post-card-byline-date"><time
+                    {{authors}}
+                </span>               
+                {{!-- <span class="post-card-byline-date"><time
                         datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                </span>
-                
+                </span> --}}
             </div>
 
         </a>

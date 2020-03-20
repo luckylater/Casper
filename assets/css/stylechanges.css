@@ -54,8 +54,11 @@ header.site-header-base {
     text-transform: none;
 }
 
-.hp-lead-posts, .hp-oncampus-posts {
-    display: flex;
-    flex-flow: column wrap;
+.hp-lead-posts {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-column-gap: 10px;
 }
+
+
 

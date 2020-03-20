@@ -8,27 +8,31 @@ into the {body} of the default.hbs template --}}
         <div class="post-featured">
             {{#get "posts" limit="1" filter="featured:true"}}
             {{#foreach posts}}
-                {{> "post-card"}}
+            {{> "post-card"}}
             {{/foreach}}
             {{/get}}
         </div>
 
         <div class="post-feed latest-posts">
             {{#get "posts" limit="6" filter="featured:false"}}
-            {{#foreach posts}}                
-                {{> "latest-post-card"}}
+            {{#foreach posts}}
+            {{> "latest-post-card"}}
             {{/foreach}}
             {{/get}}
         </div>
     </div>
 
     <div class="hp-oncampus-posts">
-        <h2>On-Campus Movies!</h2>
-        {{#get "posts" filter="tags:Entertainment" limit="3"}}
-        {{#foreach posts}}
-            {{> "post-card"}}
-        {{/foreach}}
-        {{/get}}
+        {{!-- <h2>On-Campus Movies!</h2> --}}
+        <div class="this-tag">
+            {{#post}}
+                {{#get "posts" filter="tag:entertainment+featured:false" limit="3"}}
+                    {{#foreach posts}}
+                    {{> "post-card"}}
+                    {{/foreach}}
+                {{/get}}
+            {{/post}}
+        </div>
     </div>
 </main>
 
@@ -42,7 +46,7 @@ into the {body} of the default.hbs template --}}
     //   Dropping the scroll event and using only a raf loop results in smoother
     //   scrolling but continuous processing even when not scrolling
     $(document).ready(function () {
-        
+
         var nav = document.querySelector('.site-nav-main .site-nav');
         var feed = document.querySelector('.post-feed');
 
