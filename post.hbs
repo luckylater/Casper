@@ -80,9 +80,9 @@ into the {body} of the default.hbs template --}}
 {{/get}}
 
 {{#if primary_tag}}
-{{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
+{{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" include="authors" limit="3" as |related_posts|}}
 {{#if related_posts}}
-<section class="read-next-card">
+<section class="read-next-card zero-out">
     <header class="read-next-card-header">
         {{#../primary_tag}}
         <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
