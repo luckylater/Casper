@@ -14,7 +14,7 @@ into the {body} of the default.hbs template --}}
         </div>
 
         <div class="post-feed latest-posts">
-            {{#get "posts" limit="6" filter="featured:false"}}
+            {{#get "posts" limit="6" filter="featured:false"  include="tags,authors"}}
             {{#foreach posts}}
             {{> "latest-post-card"}}
             {{/foreach}}
