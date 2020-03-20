@@ -65,5 +65,10 @@ header.site-header-base {
     flex-direction: column;
 }
 
+.lpc {
+    margin: 0;
+    padding: 0;
+}
+
 
 

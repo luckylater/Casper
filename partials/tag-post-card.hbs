@@ -1,12 +1,8 @@
 <div class="latest-post-card">
             <div class="post-card-byline-tag lpc">
-                    {{#if primary_tag}}
-                    <p>
-                        <a href="{{@site.url}}/tag/{{primary_tag.name}}/">
-                            {{primary_tag.name}}
-                        </a>
-                    </p>
-                    {{/if}}
+                    {{#get "tags" limit="all"}}
+                    {{tags from="2" limit="3" seperator=" &bull; "}}
+                    {{/get}}
             </div>
 
             <header class="post-card-header lpc">
@@ -19,9 +15,9 @@
                 <span>
                     {{authors}}
                 </span>               
-                {{!-- <span class="post-card-byline-date"><time
+                <span class="post-card-byline-date"><time
                         datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                </span> --}}
+                </span>
             </div>
 </div>
         

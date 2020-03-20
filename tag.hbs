@@ -9,10 +9,15 @@
         <h2 class="site-description">
             {{#if description}}
             {{description}}
-            {{else}}
-            A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
             {{/if}}
         </h2>
+    </div>
+    <div class="featured-tag-post">
+        {{#get "posts" limit="1" filter="featured:true+tag:{{name}}"}}
+        {{#foreach posts}}
+            {{> "post-card"}}
+        {{/foreach}}
+        {{/get}}
     </div>
 </header>
 {{/tag}}
@@ -22,8 +27,7 @@
     <div class="inner posts">
         <div class="post-feed">
             {{#foreach posts}}
-            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
-            {{> "post-card"}}
+            {{> "tag-post-card"}}
             {{/foreach}}
         </div>
     </div>
