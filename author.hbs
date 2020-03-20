@@ -4,9 +4,7 @@
 {{#author}}
 {{!-- Everything inside the #author tags pulls data from the author --}}
 
-
 <header class="site-archive-header">
-    {{> header-background background=cover_image}} {{!--Special header-image.hbs partial to generate the background image--}}
         <div class="inner">
             <div class="site-header-content author-header">
                 {{#if profile_image}}
@@ -35,7 +33,6 @@
         </div>
     </div>
 </header>
-{{/author}}
 
 {{!-- The main content area --}}
 <main id="site-main" class="site-main outer">
@@ -43,10 +40,11 @@
 
         <div class="post-feed">
             {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
             {{/foreach}}
         </div>
 
     </div>
 </main>
+
+{{/author}}

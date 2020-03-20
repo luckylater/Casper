@@ -60,14 +60,21 @@ header.site-header-base {
     grid-column-gap: 10px;
 }
 
-.latest-post-card {
-    display: flex;
-    flex-direction: column;
+.latest-post-card, .tag-post-card {
+    flex-basis: 25%;
+    min-width: 120px;
 }
 
 .lpc {
     margin: 0;
     padding: 0;
+}
+
+.post-feed {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
 }
 
 
