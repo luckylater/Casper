@@ -60,5 +60,10 @@ header.site-header-base {
     grid-column-gap: 10px;
 }
 
+.latest-post-card {
+    display: flex;
+    flex-direction: column;
+}
+
 
 
