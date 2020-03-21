@@ -13,6 +13,8 @@ into the {body} of the default.hbs template --}}
             {{/get}}
         </div>
 
+        <div class="latest-posts-section">
+            <h2 class="section-title">Latest</h2>
         <div class="post-feed latest-posts zero-out">
             {{#get "posts" limit="6" filter="featured:false"  include="tags,authors"}}
             {{#foreach posts}}
@@ -20,10 +22,11 @@ into the {body} of the default.hbs template --}}
             {{/foreach}}
             {{/get}}
         </div>
+        </div>
     </div>
 
     <div class="hp-oncampus-posts">
-        <h2>On-Campus</h2>
+        <h3 class="section-title">On-Campus</h3>
         <div class="nowrap post-feed">
             {{#get "posts" limit="3" filter="featured:false"}}
             {{#foreach posts}}
@@ -33,7 +36,7 @@ into the {body} of the default.hbs template --}}
         </div>
     </div>
 
-    <div class="hp-multimedia-posts">
+    {{!-- <div class="hp-multimedia-posts">
         <div class="nowrap post-feed">
             <h3>Podcasts</h3>
             {{#get "posts" limit="3" filter="tag:audio"}}
@@ -42,7 +45,7 @@ into the {body} of the default.hbs template --}}
             {{/foreach}}
             {{/get}}
         </div>
-    </div>
+    </div> --}}
 
     <div class="other-posts">
         {{#get "posts" limit="all"}}

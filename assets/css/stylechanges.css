@@ -1,3 +1,7 @@
+.p {
+    margin: 0;
+}
+
 .page-template .site-main, .post-template .site-main {
     margin-top: 64px;
     padding: 0;
@@ -43,15 +47,24 @@ header.site-header-base {
     height: 35px;
 }
 
+.post-card {
+    border: none;
+}
 
 .post-card-byline-content {
     flex: 0;
     margin: 0;
 }
 
-.post-card-byline-tag {
+.post-card-title {
+    margin-bottom: .2em;
+}
+
+.post-card-byline-tag, .post-card-image {
     text-transform: none;
     font-size: .7em;
+    width: 30%;
+    line-height: 1.5;
 }
 
 .post-card-byline-date {
@@ -59,17 +72,28 @@ header.site-header-base {
     text-transform: none;
 }
 
-
-
 .hp-lead-posts {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-column-gap: 10px;
+    margin: .5em 1.2em;
+    padding-bottom: .7em;
 }
 
-.latest-post-card, .tag-post-card {
+.hp-oncampus-posts {
+    margin: 0 2.5em;
+}
+
+.latest-post-card {
+    flex-basis: 42%;
+    min-width: 120px;
+    border-top: 1px solid #d1d1d1;
+}
+
+.tag-post-card {
     flex-basis: 25%;
     min-width: 120px;
+    border-top: 1px solid #d1d1d1;
 }
 
 .zero-out {
@@ -96,6 +120,7 @@ header.site-header-base {
     justify-content: space-between;
     margin: 0;
     padding: 0;
+    height: -webkit-fill-available;
 }
 
 a {
@@ -107,6 +132,38 @@ a:hover {
     color: rgb(107, 8, 107);
 }
 
+.other-posts {
+    margin: 0 2em;
+    width: 75%;
+}
+
 .other-post {
     display: flex;
+    padding-bottom: .6em;
+    border-top: 1px solid #d1d1d1;
+}
+
+.other-post-content {
+    width: 70%;
+    padding: .7em;
+}
+
+.outer {
+    padding: 0;
+}
+
+@media (min-width: 900px) {
+.author-template .post-feed, .home-template .post-feed, .tag-template .post-feed {
+    
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+}
+
+.section-title {
+    border-bottom: 3px solid rgb(168, 75, 168);
+}
+
+.post-featured {
+    flex-direction: column;
 }
