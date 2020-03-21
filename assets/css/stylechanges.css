@@ -23,7 +23,7 @@
     
 header.site-header-base {
     margin: 0 auto;
-    background-color: black;
+    background-color: rebeccapurple;
     max-width: 1040px;
     width: 100%;
     display: flex;
@@ -98,5 +98,12 @@ header.site-header-base {
     padding: 0;
 }
 
+a {
+    color: rgb(121, 34, 121);
+}
 
+a:hover {
+    text-decoration: none;
+    color: rgb(107, 8, 107);
+}
 

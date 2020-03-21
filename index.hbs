@@ -13,7 +13,7 @@ into the {body} of the default.hbs template --}}
             {{/get}}
         </div>
 
-        <div class="post-feed latest-posts">
+        <div class="post-feed latest-posts zero-out">
             {{#get "posts" limit="6" filter="featured:false"  include="tags,authors"}}
             {{#foreach posts}}
             {{> "latest-post-card"}}
@@ -23,8 +23,8 @@ into the {body} of the default.hbs template --}}
     </div>
 
     <div class="hp-oncampus-posts">
-        <h2>On-Campus Movies!</h2>
-        <div class="post-feed nowrap">
+        <h2>On-Campus</h2>
+        <div class="nowrap post-feed">
             {{#get "posts" limit="3" filter="featured:false"}}
             {{#foreach posts}}
             {{> "post-card"}}
@@ -32,6 +32,26 @@ into the {body} of the default.hbs template --}}
             {{/get}}
         </div>
     </div>
+
+    <div class="hp-multimedia-posts">
+        <div class="nowrap post-feed">
+            <h3>Podcasts</h3>
+            {{#get "posts" limit="3" filter="tag:audio"}}
+            {{#foreach posts}}
+            {{> "pic-post-card"}}
+            {{/foreach}}
+            {{/get}}
+        </div>
+    </div>
+
+    <div class="other-posts">
+        {{#get "posts" limit="all"}}
+        {{#foreach posts}}
+        {{> "other-post-card"}}
+        {{/foreach}}
+        {{/get}}
+    </div>
+
 </main>
 
 
