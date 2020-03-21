@@ -12,18 +12,20 @@
     </div>
 
     <div class="other-post-content">
-        {{primary_tag}}
+        {{tags limit="1"}}
 
         <a href="{{url}}">
             <h2 class="post-card-title">{{title}}</h2>
         </a>
 
-        <p>{{excerpt}}</p>
-
         <div class="other-post-byline">
-            {{authors}}
+            <span>
+                {{authors}}
+            </span> 
             <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
         </div>
+
+        <p>{{excerpt}}</p>
     </div>
 
 </div>

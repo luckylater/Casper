@@ -27,7 +27,7 @@ into the {body} of the default.hbs template --}}
 
     <div class="hp-oncampus-posts">
         <h3 class="section-title">On-Campus</h3>
-        <div class="nowrap post-feed">
+        <div class="post-feed-static post-feed">
             {{#get "posts" limit="3" filter="featured:false"}}
             {{#foreach posts}}
             {{> "post-card"}}
