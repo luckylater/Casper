@@ -16,19 +16,18 @@
     <div class="post-card-content">
 
         <a class="post-card-content-link" href="{{url}}">
-
-            <header class="post-card-header">
-                <h2 class="post-card-title">{{title}}</h2>
-            </header>
+            
+            <h2 class="post-card-title">{{title}}</h2>           
 
             <div class="post-card-byline-content">
                 <span>
                     {{#has author="count:>1"}} <h5>by Multiple Authors</h5>
-                    {{else}}by {{authors}}{{/has}}
-                </span>
-                <span class="post-card-date-n-tag">
-                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                    {{else}}{{authors}}{{/has}}
+
                     {{tags limit="1"}}
+                </span>
+                <span class="post-card-date-n-tag"></span>
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
                 </span>
             </div>
 

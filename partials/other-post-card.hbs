@@ -8,6 +8,9 @@
                     {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 1000px) 400px, 700px"
                 src="{{img_url feature_image size="m"}}" alt="{{title}}" />
         </a>
+        {{!-- {{else}}
+        this is where dummy pic goes
+        {{/else}} --}}
         {{/if}}
     </div>
 
@@ -16,9 +19,11 @@
             {{tags limit="1"}}
         </div>
 
-        <a href="{{url}}">
-            <h2 class="post-card-title">{{title}}</h2>
-        </a>
+        
+        <h2 class="post-card-title">
+            <a href="{{url}}">{{title}}</a>
+        </h2>
+        
 
         <div class="other-post-byline">
             {{#has author="count:>1"}} 

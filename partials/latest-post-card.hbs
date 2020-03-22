@@ -10,9 +10,11 @@
     </a>
 
     {{#has author="count:>1"}} 
-    <h5>Multiple Authors</h5>
+    <h5 class="author-name">Multiple Authors</h5>
     {{else}}
-    {{authors}}
+    <div class="author-name">
+        {{authors}}
+    </div>
     {{/has}}
     
 </div>

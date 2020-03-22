@@ -58,6 +58,8 @@ header.site-header-base {
 
 .post-card-title {
     margin-bottom: .2em;
+    font-size: 2.2rem;
+    color: black;
 }
 
 .post-card-byline-tag{
@@ -80,7 +82,7 @@ header.site-header-base {
     padding-bottom: .7em;
 }
 
-.hp-oncampus-posts {
+.hp-general-section {
     margin: 0 2.5em;
 }
 
@@ -198,4 +200,13 @@ time {
 
 .other-post-tag {
     color: silver;
+}
+
+.author-name {
+    font-size: .85em;
+}
+
+.oncampus-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
