@@ -12,17 +12,22 @@
     </div>
 
     <div class="other-post-content">
-        {{tags limit="1"}}
+        <div class="other-post-tag">
+            {{tags limit="1"}}
+        </div>
 
         <a href="{{url}}">
             <h2 class="post-card-title">{{title}}</h2>
         </a>
 
         <div class="other-post-byline">
-            
+            {{#has author="count:>1"}} 
+            <h5>Multiple Authors</h5>
+            {{else}}
             {{authors}}
-            
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+            {{/has}}
+
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM"}}</time>
         </div>
 
         <p>{{excerpt}}</p>

@@ -23,19 +23,12 @@
 
             <div class="post-card-byline-content">
                 <span>
-                    {{#has author="count:>2"}} <h5>Multiple authors</h5>
-                    {{else}}{{authors}}{{/has}}
+                    {{#has author="count:>1"}} <h5>by Multiple Authors</h5>
+                    {{else}}by {{authors}}{{/has}}
                 </span>
-                <span class="post-card-byline-date"><time
-                        datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></span>
-                <span class="post-card-byline-tag">
-                    {{#if primary_tag}}
-                    <p>~ 
-                        <a href="{{@site.url}}/tag/{{primary_tag.name}}/">
-                            {{primary_tag.name}}
-                        </a>
-                    </p>
-                    {{/if}}
+                <span class="post-card-date-n-tag">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                    {{tags limit="1"}}
                 </span>
             </div>
 

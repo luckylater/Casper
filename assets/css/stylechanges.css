@@ -191,3 +191,11 @@ a:hover {
 @media (min-width 825px) {
     /* change to mobile layout */
 }
+
+time {
+    font-size: 70%;
+}
+
+.other-post-tag {
+    color: silver;
+}

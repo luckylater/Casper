@@ -28,24 +28,24 @@ into the {body} of the default.hbs template --}}
     <div class="hp-oncampus-posts">
         <h3 class="section-title">On-Campus</h3>
         <div class="post-feed-static post-feed">
-            {{#get "posts" limit="3" filter="featured:false" include="tags,authors"}}
+            {{#get "posts" limit="2" filter="featured:false" include="tags,authors"}}
             {{#foreach posts}}
-            {{> "post-card"}}
+            {{> "other-post-card"}}
             {{/foreach}}
             {{/get}}
         </div>
     </div>
 
-    {{!-- <div class="hp-multimedia-posts">
+    <div class="hp-multimedia-posts">
+        <h3 class="section-title">Podcasts</h3>
         <div class="nowrap post-feed">
-            <h3>Podcasts</h3>
             {{#get "posts" limit="3" filter="tag:audio"}}
             {{#foreach posts}}
             {{> "pic-post-card"}}
             {{/foreach}}
             {{/get}}
         </div>
-    </div> --}}
+    </div>
 
     <div class="other-posts">
         {{#get "posts" limit="all" include="tags,authors"}}

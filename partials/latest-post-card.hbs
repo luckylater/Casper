@@ -9,7 +9,10 @@
         <h2 class="post-card-title">{{title}}</h2>
     </a>
 
-    <div class="post-card-byline-content zero-out">
-        {{authors}}
-    </div>
+    {{#has author="count:>1"}} 
+    <h5>Multiple Authors</h5>
+    {{else}}
+    {{authors}}
+    {{/has}}
+    
 </div>
