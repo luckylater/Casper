@@ -6,7 +6,7 @@ into the {body} of the default.hbs template --}}
 <main id="site-main" class="site-main outer">
     <div class="hp-lead-posts">
         <div class="post-featured">
-            {{#get "posts" limit="1" filter="featured:true"}}
+            {{#get "posts" limit="1" filter="featured:true" include="authors,tags"}}
             {{#foreach posts}}
             {{> "post-card"}}
             {{/foreach}}
@@ -28,7 +28,7 @@ into the {body} of the default.hbs template --}}
     <div class="hp-oncampus-posts">
         <h3 class="section-title">On-Campus</h3>
         <div class="post-feed-static post-feed">
-            {{#get "posts" limit="3" filter="featured:false"}}
+            {{#get "posts" limit="3" filter="featured:false" include="tags,authors"}}
             {{#foreach posts}}
             {{> "post-card"}}
             {{/foreach}}
@@ -48,7 +48,7 @@ into the {body} of the default.hbs template --}}
     </div> --}}
 
     <div class="other-posts">
-        {{#get "posts" limit="all"}}
+        {{#get "posts" limit="all" include="tags,authors"}}
         {{#foreach posts}}
         {{> "other-post-card"}}
         {{/foreach}}
