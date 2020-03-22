@@ -19,17 +19,19 @@
             {{tags limit="1"}}
         </div>
 
-        
-        <h2 class="post-card-title">
-            <a href="{{url}}">{{title}}</a>
+
+        <h2>
+            <a href="{{url}}" class="post-card-title">{{title}}</a>
         </h2>
-        
+
 
         <div class="other-post-byline">
-            {{#has author="count:>1"}} 
-            <h5>Multiple Authors</h5>
+            {{#has author="count:>1"}}
+            <a class="author-name">Multiple Authors</a>
             {{else}}
-            {{authors}}
+            <div class="author-name">
+                {{authors}}
+            </div>
             {{/has}}
 
             <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM"}}</time>
