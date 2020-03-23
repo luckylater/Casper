@@ -28,12 +28,13 @@
 
         <div class="other-post-byline">
             {{#has author="count:>1"}}
-            <span class="author-name">Multiple Authors</span>
+            {{!--leave as a tag for color match --}}
+            <a class="author-name">Multiple Authors</a>
             {{else}}   
             <span class="author-name">{{authors}}</span>                    
             {{/has}}
 
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM"}}</time>
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMMM D"}}</time>
         </div>
     </div>
 
