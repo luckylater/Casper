@@ -2,44 +2,46 @@
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
 {{#author}}
-<header class="site-archive-header">
-        <div class="inner">
-            <div class="site-header-content author-header">
-                {{#if profile_image}}
-                    <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
-                {{else}}
-                    <span class="author-profile-image">{{> "icons/avatar"}}</span>
-                {{/if}}
-                <div class="author-header-content">
-                    <h1 class="site-title">{{name}}</h1>
-                    {{#if bio}}
-                        <h2 class="author-bio">{{bio}}</h2>
+<main id="site-main" class="site-main outer">
+
+    <header class="site-archive-header">
+            <div class="inner">
+                <div class="site-header-content author-header">
+                    {{#if profile_image}}
+                        <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                    {{else}}
+                        <span class="author-profile-image">{{> "icons/avatar"}}</span>
                     {{/if}}
-                    <div class="author-meta">                        
-                        {{#if website}}
-                            <span class="author-social-link"><a href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
+                    <div class="author-header-content">
+                        <h1 class="site-title">{{name}}</h1>
+                        {{#if bio}}
+                            <h2 class="author-bio">{{bio}}</h2>
                         {{/if}}
-                        {{#if twitter}}
-                            <span class="author-social-link"><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
-                        {{/if}}
-                        {{#if facebook}}
-                            <span class="author-social-link"><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
-                        {{/if}}
+                        <div class="author-meta">                        
+                            {{#if website}}
+                                <span class="author-social-link"><a href="{{website}}" target="_blank" rel="noopener">{{website}}</a></span>
+                            {{/if}}
+                            {{#if twitter}}
+                                <span class="author-social-link"><a href="{{twitter_url}}" target="_blank" rel="noopener">Twitter</a></span>
+                            {{/if}}
+                            {{#if facebook}}
+                                <span class="author-social-link"><a href="{{facebook_url}}" target="_blank" rel="noopener">Facebook</a></span>
+                            {{/if}}
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
-{{/author}}
+    </header>
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
     <div class="inner posts post-feed">
         {{#foreach posts}}
-        {{> "author-post-card"}}
+        {{> "other-post-card"}}
         {{/foreach}}
     </div>
 </main>
+
+{{/author}}
 
 

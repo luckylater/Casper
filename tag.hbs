@@ -1,31 +1,32 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 
-{{#tag}}
-<header class="site-archive-header">
-    <div class="inner site-header-content">
-        <h1 class="site-title">{{name}}</h1>
-        <h2 class="site-description">
-            {{#if description}}
-            {{description}}
-            {{/if}}
-        </h2>
-    </div>
-    {{!-- <div class="featured-tag-post">
-        {{#get "posts" limit="1" filter="featured:true+tag:{{name}}"}}
-        {{#foreach posts}}
-        {{> "post-card"}}
-        {{/foreach}}
-        {{/get}}
-    </div> --}}
-</header>
-{{/tag}}
+<main id="site-main" class="site-main outer"></default>
 
-{{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
-    <div class="inner posts post-feed">
+    {{#tag}}
+    <header class="site-archive-header">
+        <div class="inner site-header-content">
+            <h1>{{name}}</h1>
+            <h2 class="site-description">
+                {{#if description}}
+                {{description}}
+                {{/if}}
+            </h2>
+        </div>
+        {{!-- <div class="featured-tag-post">
+            {{#get "posts" limit="1" filter="featured:true+tag:{{name}}"}}
+            {{#foreach posts}}
+            {{> "post-card"}}
+            {{/foreach}}
+            {{/get}}
+        </div> --}}
+    </header>
+    {{/tag}}
+
+    <div class="post-feed">
         {{#foreach posts}}
-        {{> "tag-post-card"}}
+        {{> "other-post-card"}}
         {{/foreach}}
     </div>
+
 </main>

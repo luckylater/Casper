@@ -1,8 +1,6 @@
 <div class="latest-post-card">
-    <div class="post-card-byline-tag zero-out">
-        {{#get "tags" limit="1"}}
-        {{tags}}
-        {{/get}}
+    <div class="post-card-byline-tag">
+        {{primary_tag}}
     </div>
 
     
@@ -13,9 +11,7 @@
     {{#has author="count:>1"}} 
     <a class="author-name">Multiple Authors</a>
     {{else}}
-    <div class="author-name">
-        {{authors}}
-    </div>
+    {{authors}}
     {{/has}}
     
 </div>

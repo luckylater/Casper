@@ -27,7 +27,7 @@ into the {body} of the default.hbs template --}}
     <div class="hp-general-section">
         <h3 class="section-title">On-Campus</h3>
         <div class="oncampus-content post-feed-static post-feed">
-            {{#get "posts" limit="2" filter="featured:false" include="tags,authors"}}
+            {{#get "posts" limit="2" filter="featured:false+tag:entertainment" include="tags,authors"}}
             {{#foreach posts}}
             {{> "other-post-card"}}
             {{/foreach}}
@@ -35,16 +35,16 @@ into the {body} of the default.hbs template --}}
         </div>
     </div>
 
-    {{!-- <div class="hp-general-section">
+    <div class="hp-general-section">
         <h3 class="section-title">Podcasts</h3>
-        <div class="nowrap post-feed">
+        <div class="post-feed-static post-feed">
             {{#get "posts" limit="3" filter="tag:opinion"}}
             {{#foreach posts}}
             {{> "pic-post-card"}}
             {{/foreach}}
             {{/get}}
         </div>
-    </div> --}}
+    </div>
 
     <div class="other-posts">
         {{#get "posts" limit="all" include="tags,authors"}}

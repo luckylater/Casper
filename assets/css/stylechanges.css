@@ -87,7 +87,7 @@ header.site-header-base {
 }
 
 .latest-post-card {
-    flex-basis: 42%;
+    flex-basis: 46%;
     min-width: 120px;
     border-top: 1px solid #d1d1d1;
     padding-bottom: .7em;
@@ -205,6 +205,8 @@ time {
 
 .author-name {
     font-size: .85em;
+    line-height: 1;
+    vertical-align: top;
 }
 
 .oncampus-content {
@@ -220,4 +222,9 @@ img.featured-image {
 img.box-image {
     width: 150px;
     height: 150px;
+}
+
+h2 {
+    margin: .05em 0 .5em;
+    font-size: 2.2rem;
 }
