@@ -24,13 +24,13 @@
             <a href="{{url}}" class="post-card-title">{{title}}</a>
         </h2>
 
-        <p>{{excerpt}}</p>
-        
+        <p class="excerpt-text">{{excerpt}}</p>
+
         <div class="other-post-byline">
             {{#has author="count:>1"}}
-            <a class="author-name">Multiple Authors</a>
-            {{else}}           
-            {{authors}}            
+            <span class="author-name">Multiple Authors</span>
+            {{else}}   
+            <span class="author-name">{{authors}}</span>                    
             {{/has}}
 
             <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM"}}</time>

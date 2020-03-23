@@ -7,47 +7,47 @@ into the {body} of the default.hbs template --}}
 {{#post}}
 
 <main id="site-main" class="site-main outer">
-    
 
-        <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-            <header class="post-full-header">
+    <article class="post-full {{post_class}} {{#unless feature_image}}no-image{{/unless}}">
 
-                {{#if tags}}
-                <section class="post-full-tags">
-                    {{tags separator="  |  "}}
-                </section>
-                {{/if}}
+        <header class="post-full-header">
 
-                <h1 class="post-full-title">{{title}}</h1>
-
-                {{#if custom_excerpt}}
-                <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
-                {{/if}}
-
-                <div class="post-full-byline">
-                    <section class="post-full-byline-content">
-                        <section class="post-full-byline-meta">
-                            <h4 class="author-name">{{authors}}</h4>
-                            <div class="byline-meta-content">
-                                <time class="byline-meta-date"
-                                    datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-                            </div>
-                        </section>
-                    </section>
-                </div>
-
-            </header>
-
-            <section class="post-full-content">
-                <div class="post-content">
-                    {{content}}
-                </div>
+            {{#if tags}}
+            <section class="post-full-tags">
+                {{tags separator="  |  "}}
             </section>
+            {{/if}}
 
-        </article>
+            <h1 class="post-full-title">{{title}}</h1>
 
-    
+            {{#if custom_excerpt}}
+            <p class="post-full-custom-excerpt">{{custom_excerpt}}</p>
+            {{/if}}
+
+            <div class="post-full-byline">
+                <section class="post-full-byline-content">
+                    <section class="post-full-byline-meta">
+                        <h4 class="author-name">{{authors}}</h4>
+                        <div class="byline-meta-content">
+                            <time class="byline-meta-date"
+                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+                        </div>
+                    </section>
+                </section>
+            </div>
+
+        </header>
+
+        <section class="post-full-content">
+            <div class="post-content">
+                {{content}}
+            </div>
+        </section>
+
+    </article>
+
+
 </main>
 
 {{!--this is the CHECK OUT MORE CONTENT section--}}
@@ -55,58 +55,63 @@ into the {body} of the default.hbs template --}}
 <aside class="read-more-wrapper">
 
 
-{{#get "posts" filter="authors:{{primary_author.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
-{{#if related_posts}}
-<section class="read-more-author read-more-section">
-    <header class="read-next-card-header">
-        {{#../primary_author}}
-        <h3><span>More by</span> <a href="{{url}}">{{name}}</a></h3>
-        {{/../primary_author}}
-    </header>
-    <div class="read-more-card-content">
-        <ul>
-            {{#foreach related_posts}}
-            <li>
-                <h4><a href="{{url}}">{{title}}</a></h4>
-                <div class="read-next-card-meta">
-                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></p>
-                </div>
-            </li>
-            {{/foreach}}
-        </ul>
-    </div>
-</section>
-{{/if}}
-{{/get}}
+    {{#get "posts" filter="authors:{{primary_author.slug}}+id:-{{comment_id}}" limit="3" as |related_posts|}}
+    {{#if related_posts}}
+    <section class="read-more-author read-more-section">
+        <header class="read-next-card-header">
+            {{#../primary_author}}
+            <h3><span>More by</span> <a href="{{url}}">{{name}}</a></h3>
+            {{/../primary_author}}
+        </header>
+        <div class="read-more-card-content">
+            <ul>
+                {{#foreach related_posts}}
+                <li>
+                    <h4><a href="{{url}}">{{title}}</a></h4>
+                    <div class="read-next-card-meta">
+                        <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></p>
+                    </div>
+                </li>
+                {{/foreach}}
+            </ul>
+        </div>
+    </section>
+    {{/if}}
+    {{/get}}
 
-{{#if primary_tag}}
-{{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" include="authors" limit="6" as |related_posts|}}
-{{#if related_posts}}
-<section class="read-more-tag read-more-section">
-    <header class="read-next-card-header">
-        {{#../primary_tag}}
-        <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
-        {{/../primary_tag}}
-    </header>
-    <div class="read-more-card-content">
-        <ul>
-            {{#foreach related_posts}}
-            <li>
-                <h4><a href="{{url}}">{{title}}</a></h4>
-                
-                <span>{{authors}}</span>
-                  
-                <div class="read-next-card-meta">
-                    <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></p>
-                </div>
-            </li>
-            {{/foreach}}
-        </ul>
-    </div>
-</section>
-{{/if}}
-{{/get}}
-{{/if}}
+    {{#if primary_tag}}
+    {{#get "posts" filter="tags:{{primary_tag.slug}}+id:-{{comment_id}}" include="authors" limit="6" as
+    |related_posts|}}
+    {{#if related_posts}}
+    <section class="read-more-tag read-more-section">
+        <header class="read-next-card-header">
+            {{#../primary_tag}}
+            <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
+            {{/../primary_tag}}
+        </header>
+        <div class="read-more-card-content">
+            <ul>
+                {{#foreach related_posts}}
+                <li>
+                    <h4><a href="{{url}}">{{title}}</a></h4>
+
+                    {{#has author="count:>1"}}
+                    <span class="author-name"><a>Multiple Authors</a></span>
+                    {{else}}
+                    <span class="author-name">{{authors}}</span>
+                    {{/has}}
+
+                    <div class="read-next-card-meta">
+                        <p><time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time></p>
+                    </div>
+                </li>
+                {{/foreach}}
+            </ul>
+        </div>
+    </section>
+    {{/if}}
+    {{/get}}
+    {{/if}}
 
 </aside>
 

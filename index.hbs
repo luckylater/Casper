@@ -12,7 +12,7 @@ into the {body} of the default.hbs template --}}
         {{/foreach}}
         {{/get}}
 
-        <div class="latest-posts-section">
+        <div class="latest-posts-content">
             <h2 class="section-title">Latest</h2>
             <div class="post-feed latest-posts zero-out">
                 {{#get "posts" limit="6" filter="featured:false"  include="tags,authors"}}
