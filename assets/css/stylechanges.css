@@ -24,6 +24,23 @@
     flex-direction: row;
     columns: 1fr 2fr;
 }
+
+.read-more-section {
+    margin: 0;
+    padding: 2em;
+}
+
+.read-more-author {
+    flex-basis: 40%;
+}
+
+.read-more-tag {
+    flex-basis: 60%;
+}
+
+.read-more-card-content {
+    width: 85%;
+}
     
 header.site-header-base {
     margin: 0 auto;
@@ -153,6 +170,7 @@ a:hover {
     display: flex;
     padding-bottom: .6em;
     border-top: 1px solid #d1d1d1;
+    flex-basis: 100%;
 }
 
 .other-post-content {
@@ -185,10 +203,20 @@ a:hover {
 }
 
 @media (min-width: 795px) {
-.post-card-large .post-card-content {
+.post-card-content {
     flex: none;
     justify-content: start; 
 }
+
+.post-card-image-link {
+    position: relative;
+    flex: 1 1 auto;
+    margin-bottom: 0;
+}
+}
+
+.post-card-image-link {
+    min-height: none;
 }
 
 @media (min-width 825px) {
@@ -227,4 +255,8 @@ img.box-image {
 h2 {
     margin: .05em 0 .5em;
     font-size: 2.2rem;
+}
+
+.xxx-format {
+    width: 80%;
 }

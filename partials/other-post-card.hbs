@@ -1,5 +1,5 @@
-<div class="other-post zero-out">
-    <div class="post-card-image zero-out">
+<div class="other-post">
+    <div class="post-card-image">
         {{#if feature_image}}
         <a class="post-card-image-link" href="{{url}}">
             <img class="post-card-image" srcset="{{img_url feature_image size="s"}} 300w,
@@ -24,7 +24,8 @@
             <a href="{{url}}" class="post-card-title">{{title}}</a>
         </h2>
 
-
+        <p>{{excerpt}}</p>
+        
         <div class="other-post-byline">
             {{#has author="count:>1"}}
             <a class="author-name">Multiple Authors</a>
@@ -34,8 +35,6 @@
 
             <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM"}}</time>
         </div>
-
-        <p>{{excerpt}}</p>
     </div>
 
 </div>
