@@ -14,14 +14,7 @@ into the {body} of the default.hbs template --}}
 
         <section class="lead-posts-right">
 
-            {{#get "posts" limit="1" filter="featured:true" from="2" include="authors,tags"}}
-            {{#foreach posts}}
-            {{> "other-post-card"}}
-            {{/foreach}}
-            {{/get}}
-
             <div class="latest-posts-content">
-                <h2 class="section-title">Latest</h2>
                 <div class="post-feed latest-posts zero-out">
                     {{#get "posts" limit="6" filter="featured:false"  include="tags,authors"}}
                     {{#foreach posts}}
@@ -30,11 +23,18 @@ into the {body} of the default.hbs template --}}
                     {{/get}}
                 </div>
             </div>
+
+            {{#get "posts" limit="1" filter="featured:true" include="authors,tags"}}
+            {{#foreach posts}}
+            {{> "other-post-card"}}
+            {{/foreach}}
+            {{/get}}
+
         </section>
 
     </div>
 
-    <div class="hp-general-section">
+    {{!-- <div class="hp-general-section">
         <h3 class="section-title">On-Campus</h3>
         <div class="oncampus-content post-feed-static post-feed">
             {{#get "posts" limit="2" filter="featured:false+tag:entertainment" include="tags,authors"}}
@@ -54,7 +54,7 @@ into the {body} of the default.hbs template --}}
             {{/foreach}}
             {{/get}}
         </div>
-    </div>
+    </div> --}}
 
     <div class="other-posts">
         {{#get "posts" limit="all" include="tags,authors"}}

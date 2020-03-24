@@ -44,8 +44,7 @@
     
 header.site-header-base {
     margin: 0 auto;
-    background-color: rebeccapurple;
-    max-width: 1040px;
+    background-color: black;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -104,6 +103,7 @@ header.site-header-base {
 
 .latest-posts-content {
     flex-basis: 40%;
+    height: auto;
 }
 
 .latest-post-card {

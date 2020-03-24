@@ -14,21 +14,19 @@
     {{/if}}
 
     <div class="post-card-content">
+        {{tags limit="3" separator="|"}}
 
         <h1>{{title}}</h1>
 
         <div class="other-post-byline">
 
-            {{#has author="count:>1"}}
+            {{#has author="count:>2"}}
             <a class="author-name">Multiple Authors</a>
             {{else}}           
-            {{authors}}            
+            <span class="author-name">{{authors separator=" and "}}</span>              
             {{/has}}
 
             <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-
-
-            {{tags limit="1"}}
 
         </div>
 
