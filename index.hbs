@@ -3,18 +3,20 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
+<main id="site-main">
     <div class="hp-lead-posts">
 
+        <section class="lead-post-left">
         {{#get "posts" limit="1" filter="featured:true" include="authors,tags"}}
         {{#foreach posts}}
         {{> "post-card"}}
         {{/foreach}}
         {{/get}}
+        </section>
 
         <section class="lead-posts-right">
 
-            {{#get "posts" limit="1" filter="featured:true" from="2" include="authors,tags"}}
+            {{#get "posts" limit="1" filter="featured:true" include="authors,tags"}}
             {{#foreach posts}}
             {{> "other-post-card"}}
             {{/foreach}}
@@ -32,17 +34,6 @@ into the {body} of the default.hbs template --}}
             </div>
         </section>
 
-    </div>
-
-    <div class="hp-general-section">
-        <h3 class="section-title">On-Campus</h3>
-        <div class="oncampus-content post-feed-static post-feed">
-            {{#get "posts" limit="2" filter="featured:false+tag:entertainment" include="tags,authors"}}
-            {{#foreach posts}}
-            {{> "other-post-card"}}
-            {{/foreach}}
-            {{/get}}
-        </div>
     </div>
 
     <div class="hp-general-section">
