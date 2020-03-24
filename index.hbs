@@ -3,17 +3,28 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
-<main id="site-main" class="site-main outer">
+<main id="site-main">
     <div class="hp-lead-posts">
 
+        <section class="lead-post-left">
         {{#get "posts" limit="1" filter="featured:true" include="authors,tags"}}
         {{#foreach posts}}
         {{> "post-card"}}
         {{/foreach}}
         {{/get}}
+        </section>
 
         <section class="lead-posts-right">
 
+<<<<<<< HEAD
+=======
+            {{#get "posts" limit="1" filter="featured:true" include="authors,tags"}}
+            {{#foreach posts}}
+            {{> "other-post-card"}}
+            {{/foreach}}
+            {{/get}}
+
+>>>>>>> c207844f3e7e06d76824b093902b87db6721179b
             <div class="latest-posts-content">
                 <div class="post-feed latest-posts zero-out">
                     {{#get "posts" limit="6" filter="featured:false"  include="tags,authors"}}
@@ -34,6 +45,7 @@ into the {body} of the default.hbs template --}}
 
     </div>
 
+<<<<<<< HEAD
     {{!-- <div class="hp-general-section">
         <h3 class="section-title">On-Campus</h3>
         <div class="oncampus-content post-feed-static post-feed">
@@ -45,6 +57,8 @@ into the {body} of the default.hbs template --}}
         </div>
     </div>
 
+=======
+>>>>>>> c207844f3e7e06d76824b093902b87db6721179b
     <div class="hp-general-section">
         <h3 class="section-title">Podcasts</h3>
         <div class="post-feed-static post-feed">

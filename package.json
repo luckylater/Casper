@@ -1,6 +1,6 @@
 {
-    "name": "nbnbybeck",
-    "description": "Design for northbynorwestern",
+    "name": "luckylater-theme",
+    "description": "Design for entertainment blog",
     "demo": "https://demo.localhost:2368/",
     "version": "1.0.0",
     "engines": {
@@ -43,7 +43,7 @@
         "type": "git",
         "url": "https://github.com/luckylater/Practice-Ghost-Theme.git"
     },
-    "bugs": "northbynorthwestern.com",
+    "bugs": "beck4sf@gmail.com",
     "contributors": ["Beck Dengler"],
     "devDependencies": {
         "@tryghost/release-utils": "0.4.1",
