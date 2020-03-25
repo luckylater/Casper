@@ -4,10 +4,15 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
 <main id="site-main">
-    <div class="definitions">
-        {{#get "posts" filter="tag:#glossary"}}
+    <div class="glossary-box">
+        {{#get "posts" filter="tag:#glossary" include="content"}}
         {{#foreach}}
-            {{title}}
+            <div class="word">
+                {{title}}
+            </div>
+            <div class="definition">
+                {{content}}
+            </div>
         {{/foreach}}
         {{/get}}
     </div>
