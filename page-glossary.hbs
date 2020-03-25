@@ -6,13 +6,21 @@ into the {body} of the default.hbs template --}}
 <main id="site-main">
     <div class="glossary-box">
 
+        <div class="word-box">
         {{#get "posts" limit="6" filter="featured:false"  include="tags,authors"}}
         {{#foreach posts}}
-        {{> "latest-post-card"}}
+        <h5 class="word">{{title}}</h5>
+
+        <p class="definition">
+            {{content}}
+        </p>
+
         {{/foreach}}
         {{/get}}
+        </div>
 
-        {{!-- {{#get "posts" filter="tag:glossary" include="content"}}
+
+        {{#get "posts" limit="all" filter="tag:glossary"}}
         {{#foreach posts}}
             <div class="word">
                 {{title}}
@@ -21,7 +29,8 @@ into the {body} of the default.hbs template --}}
                 {{content}}
             </div>
         {{/foreach}}
-        {{/get}} --}}
+        {{/get}}
+
     </div>
 
 </main>

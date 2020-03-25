@@ -295,3 +295,17 @@ p {
 .site-footer {
     padding: 2em;
 }
+
+/* This is the glossary page css */
+
+.glossary-box {
+    background-color: purple;
+    width: 65%;
+}
+
+.word-box {
+    border-bottom: 2px dotted silver;
+}
+
+
+/* close of glossary */
