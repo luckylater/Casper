@@ -6,7 +6,7 @@ into the {body} of the default.hbs template --}}
 <main id="site-main">
     <div class="hp-lead-posts">
 
-        <section class="lead-post-left">
+        <section class="lead-posts-left">
         {{#get "posts" limit="1" filter="featured:true" include="authors,tags"}}
         {{#foreach posts}}
         {{> "post-card"}}
