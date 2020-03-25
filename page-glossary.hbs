@@ -5,7 +5,14 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main">
     <div class="glossary-box">
-        {{#get "posts" filter="tag:glossary" include="content"}}
+
+        {{#get "posts" limit="6" filter="featured:false"  include="tags,authors"}}
+        {{#foreach posts}}
+        {{> "latest-post-card"}}
+        {{/foreach}}
+        {{/get}}
+
+        {{!-- {{#get "posts" filter="tag:glossary" include="content"}}
         {{#foreach posts}}
             <div class="word">
                 {{title}}
@@ -14,8 +21,7 @@ into the {body} of the default.hbs template --}}
                 {{content}}
             </div>
         {{/foreach}}
-        {{/get}}
+        {{/get}} --}}
     </div>
 
 </main>
-
