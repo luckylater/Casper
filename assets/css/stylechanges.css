@@ -221,10 +221,8 @@ a:hover {
     flex-direction: column;
 }
 
-@media (min-width: 795px) {
 .post-card-content {
-    flex: none;
-    justify-content: start; 
+    display: block;
 }
 
 .post-card-image-link {

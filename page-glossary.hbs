@@ -5,7 +5,7 @@ into the {body} of the default.hbs template --}}
 {{!-- The main content area --}}
 <main id="site-main">
     <div class="glossary-box">
-        {{#get "posts" filter="tag:#glossary" include="content"}}
+        {{#get "posts" filter="tag:glossary" include="content"}}
         {{#foreach}}
             <div class="word">
                 {{title}}
