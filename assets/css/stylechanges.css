@@ -97,6 +97,12 @@ header.site-header-base {
     padding-bottom: .7em;
 }
 
+.lead-post-right {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1.5em;
+}
+
 .hp-general-section {
     margin: 0 2.5em;
 }
@@ -104,10 +110,11 @@ header.site-header-base {
 .latest-posts-content {
     flex-basis: 40%;
     height: auto;
+    width: 80%;
 }
 
 .latest-post-card {
-    flex-basis: 46%;
+    flex-basis: 40%;
     min-width: 120px;
     border-top: 1px solid #d1d1d1;
     padding-bottom: .7em;
@@ -286,4 +293,8 @@ h2.latest-post-title {
 
 p {
     margin: 0;
+}
+
+.site-footer {
+    padding: 2em;
 }
