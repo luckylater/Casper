@@ -235,10 +235,6 @@ a:hover {
     min-height: none;
 }
 
-@media (min-width 825px) {
-    /* change to mobile layout */
-}
-
 time {
     font-size: 70%;
 }
@@ -307,5 +303,33 @@ p {
     border-bottom: 2px dotted silver;
 }
 
-
 /* close of glossary */
+
+@media (max-width 825px) {
+    .hp-lead-posts {
+        flex-direction: column;
+        padding: 0;
+    };
+    .featured {
+        padding: 1em 0 0;
+    };
+
+
+    .other-posts {
+        width: 100%;
+        margin: 0 1em;
+    };
+
+    p.excerpt-text {
+        display: none;
+    }
+
+    .other-post-byline {
+        display: none;
+    }
+
+    
+    .site-footer {
+        height: 400px;
+    }
+}

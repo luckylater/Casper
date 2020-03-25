@@ -18,8 +18,9 @@ into the {body} of the default.hbs template --}}
         {{/foreach}}
         {{/get}}
         </div>
+    </div>
 
-
+    <div class="test-box">
         {{#get "posts" limit="all" filter="tag:glossary"}}
         {{#foreach posts}}
             <div class="word">
@@ -30,7 +31,6 @@ into the {body} of the default.hbs template --}}
             </div>
         {{/foreach}}
         {{/get}}
-
-    </div>
+        </div>
 
 </main>
