@@ -79,10 +79,10 @@ header.site-header-base {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.post-card-byline-tag{
+.post-tagline{
     text-transform: none;
     font-size: .7em;
-    width: 30%;
+    /* width: 30%; */
     line-height: 1.5;
 }
 
@@ -97,10 +97,15 @@ header.site-header-base {
     padding-bottom: .7em;
 }
 
-.lead-post-right {
+.lead-posts-right {
     display: flex;
     flex-direction: column;
     padding-top: 1.5em;
+    flex-basis: 50%;
+}
+
+.lead-posts-left {
+    flex-basis: 50%;
 }
 
 .hp-general-section {
@@ -203,8 +208,6 @@ a:hover {
 
 @media (min-width: 900px) {
 .author-template .post-feed, .home-template .post-feed, .tag-template .post-feed {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
     margin: 0;
     padding: 0;
 }
@@ -305,20 +308,29 @@ p {
 
 /* close of glossary */
 
-@media (max-width 825px) {
+@media all and (max-width: 825px) {
     .hp-lead-posts {
         flex-direction: column;
         padding: 0;
-    };
+    }
     .featured {
-        padding: 1em 0 0;
-    };
+        padding: 1.5em .5em 0 .5em;
+    }
 
+    .lead-posts-right {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 600px;
+    }
+
+    .latest-post-card {
+        flex-basis: 100%;
+    }
 
     .other-posts {
-        width: 100%;
+        width: 90%;
         margin: 0 1em;
-    };
+    }
 
     p.excerpt-text {
         display: none;
@@ -328,7 +340,6 @@ p {
         display: none;
     }
 
-    
     .site-footer {
         height: 400px;
     }

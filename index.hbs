@@ -28,7 +28,7 @@ into the {body} of the default.hbs template --}}
 
             {{#get "posts" limit="1" filter="featured:true" include="authors,tags"}}
             {{#foreach posts}}
-            {{> "other-post-card"}}
+            {{> "post-card"}}
             {{/foreach}}
             {{/get}}
 

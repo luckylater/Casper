@@ -1,6 +1,6 @@
 <div class="latest-post-card">
-    <div class="post-card-byline-tag">
-        {{tags limit="1"}}
+    <div class="post-tagline">
+        {{tags limit="3" separator=" | "}}
     </div>
 
 
@@ -8,11 +8,10 @@
         <a href="{{url}}" class="post-card-title">{{title}}</a>
     </h2>
 
-    {{#has author="count:>1"}}
+    {{!-- {{#has author="count:>1"}}
     {{!--leave as a tag for color match --}}
     <a class="author-name">Multiple Authors</a>
     {{else}}
     <span class="author-name">{{authors}}</span>
-    {{/has}}
-
+    {{/has}} --}}
 </div>
